@@ -26,7 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('hsientsungs-mbp'),
+	'local' => array('hsientsungs-mbp.home'),
+	'staging' => array('hsientsungwu.com'),
 
 ));
 
