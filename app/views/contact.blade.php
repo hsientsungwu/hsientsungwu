@@ -1,5 +1,9 @@
 @extends('template.master')
 
+@section('title')
+	Contact | HsienTsungWu
+@stop
+
 @section('content')
 	<div class="container">
         <div class="row">

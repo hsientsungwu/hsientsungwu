@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('blog.blog');
+	return View::make('home');
+});
+
+Route::get('blog', function()
+{
+	return View::make('blog');
+});
+
+Route::get('/contact', function()
+{
+	return View::make('contact');
 });

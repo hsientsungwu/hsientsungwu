@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@section('title')HsienTsungWu | Steve Wu@show</title>
+    <title>@yield('title', 'HsienTsungWu | Steve Wu')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/packages/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -29,17 +29,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">HsienTsungWu</a>
+                <a class="navbar-brand" href="/">HsienTsungWu</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">Blog</a>
+                    <li><a href="/blog/">Blog</a>
                     </li>
-                    <li><a href="#services">Portfolio</a>
-                    </li>
-                    <li><a href="#contact">Contact</a>
+                    <li><a href="/contact/">Contact</a>
                     </li>
                 </ul>
             </div>
