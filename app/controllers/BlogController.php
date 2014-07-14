@@ -10,7 +10,7 @@ class BlogController extends \BaseController {
 	public function getIndex()
 	{
 		// list top 10 blog posts
-		$posts = Post::paginate(5);
+		$posts = DB::table('post')->orderBy('id', 'desc')->paginate(5);
 
 		return View::make('blog')->with('posts', $posts);
 	}
