@@ -16,10 +16,7 @@ Route::get('/', function()
 	return View::make('home');
 });
 
-Route::get('blog', function()
-{
-	return View::make('blog');
-});
+Route::controller('blog', 'BlogController');
 
 Route::get('/contact', function()
 {

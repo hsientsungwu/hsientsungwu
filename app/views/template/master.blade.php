@@ -39,7 +39,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/#blog">Blog</a>
+                    <li><a href="/blog/">Blog</a>
                     </li>
                     <li><a href="/#contact">Contact</a>
                     </li>
