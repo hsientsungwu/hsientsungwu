@@ -16,7 +16,18 @@ Route::get('/', function()
 	return View::make('home');
 });
 
-Route::controller('blog/', 'BlogController');
+Route::get('/blog', function() {
+	// list top 10 blog posts
+	$posts = DB::table('post')->orderBy('id', 'desc')->paginate(5);
+
+	return View::make('blog')->with('posts', $posts);
+});
+
+Route::get('/blog/post/{alias}', function($alias) {
+	$post = Post::where('alias', '=', $alias)->first();
+
+	return View::make('post')->with('post', $post);
+});
 
 Route::get('/contact', function()
 {
