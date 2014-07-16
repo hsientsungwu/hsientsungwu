@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', array('as' => 'home', function() {
 	return View::make('home');
-});
+}));
+
+Route::controller('user', 'UserController');
+
+Route::controller('admin', 'AdminController');
 
 Route::get('/blog', function() {
 	// list top 10 blog posts
@@ -29,7 +32,7 @@ Route::get('/blog/post/{alias}', function($alias) {
 	return View::make('post')->with('post', $post);
 });
 
-Route::get('/contact', function()
-{
+Route::get('/contact', function() {
 	return View::make('contact');
 });
+
