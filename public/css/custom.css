@@ -113,4 +113,9 @@ hr.star-primary:after {
 
 .copyright-text {
   text-align: center;
+  line-height: 60px;
+}
+
+.post-pagination {
+  text-align: center;
 }
