@@ -70,7 +70,7 @@
         <div class="container">
             <div class="row footer-section">
                 <div class="col-lg-12">
-                    Copyright &copy; HSIENTSUNGWU.COM 2014
+                    <div class="copyright-text">Copyright &copy; HSIENTSUNGWU.COM 2014</div>
                 </div>
             </div>
         </div>

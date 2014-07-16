@@ -5,6 +5,8 @@
 
 .content {
 	padding: 20px;
+  background-image: url('/img/body_bkg.png');
+  background-repeat: repeat;
 }
 
 .social-wrapper {
@@ -66,7 +68,7 @@ hr.star-primary:after {
 .footer {
 	position: absolute;
 	width: 100%;
-	background-color: #222;
+	background-color: #F8F6E9;
 	color: #777;
 }
 
@@ -107,4 +109,8 @@ hr.star-primary:after {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.copyright-text {
+  text-align: center;
 }
