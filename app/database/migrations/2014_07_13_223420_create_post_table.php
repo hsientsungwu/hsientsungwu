@@ -18,6 +18,7 @@ class CreatePostTable extends Migration {
 	            $table->string('title');
 	            $table->string('alias');
 	            $table->text('content');
+	            $table->string('tag', 56);
 	            $table->integer('featured_image')->default(0);
 	            $table->unsignedInteger('view_count');
 	            $table->timestamps();

@@ -10,12 +10,12 @@
             <div class="col-md-4 col-md-offset-4">
                 <!-- msg -->
                 @if (Session::has('msg-danger'))
-                    <div class="alert alert-danger alert-dismissible" role="alert">{{ Session::get('msg-danger') }}</div>
+                    <div class="alert alert-danger" role="alert">{{ Session::get('msg-danger') }}</div>
                 @endif
 
                 {{ Form::open(array('url'=>'user/login', 'class'=>'form-signin')) }}
                     <h2 class="form-signin-heading">Editor Login</h2>
-                    <input type="email" name="username" class="form-control" placeholder="Email address" required="" autofocus="">
+                    <input type="email" name="username" class="form-control" placeholder="Email address" required="" autofocus="" value="{{ Input::old('username') }}">
                     <input type="password" name="password" class="form-control" placeholder="Password" required="">
                     <div class="checkbox">
                         <label>
