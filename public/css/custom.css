@@ -4,6 +4,7 @@
 }
 
 .content {
+  min-height: 230px;
 	padding: 20px;
   background-image: url('/img/body_bkg.png');
   background-repeat: repeat;
