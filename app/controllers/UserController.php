@@ -6,7 +6,7 @@ class UserController extends \BaseController {
      */
     public function __construct()
     {
-        $this->beforeFilter('auth', array('except' => ['getLogin', 'postLogin']));
+        $this->beforeFilter('auth', array('except' => ['getLogin', 'postLogin', 'getLogout']));
 
         //$this->beforeFilter('csrf', array('on' => 'post'));
     }
@@ -67,7 +67,7 @@ class UserController extends \BaseController {
 		// user logout
 		Auth::logout();
 
-    	return Redirect::route('/');
+    	return Redirect::home();
 	}
 
 
