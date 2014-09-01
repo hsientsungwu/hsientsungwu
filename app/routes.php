@@ -16,7 +16,7 @@ Route::get('/', array('as' => 'home', function() {
 }));
 
 Route::controller('user', 'UserController');
-
+Route::resource('admin/posts', 'PostsController');
 Route::controller('admin', 'AdminController');
 
 Route::get('/blog', function() {
