@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(array(
-
+	'work' => array('Vsquared.local'),
 	'local' => array('HsienTsungs-MacBook-Pro.local'),
 	'staging' => array('hsientsungwu.com'),
 
