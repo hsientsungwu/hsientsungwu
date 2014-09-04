@@ -1,7 +1,7 @@
 @extends('template.master')
 
 @section('title')
-  Create Post | HsienTsungWu
+  Edit Post | HsienTsungWu
 @stop
 
 @section('content')
@@ -19,12 +19,12 @@
             <div class="error alert alert-danger"></div>
             <div class="success alert alert-success"></div>
          
-            {{ Form::open(array('route' => 'admin.posts.store')) }}
-                <div class="title-editable" id="post-title"><h1>Enter post title</h1></div>
-                <div class="body-editable" id="post-content"><p>Enter post body</p></div>
-            {{ Form::submit('Save Post', array('class' => 'btn btn-primary', 'id' => 'form-submit')) }}
-         
-            {{ Form::close() }}
+            {{ Form::open(array('method' => 'PATCH', 'route' => array('admin.posts.update', $post->id))) }}
+		        <div class="title-editable" id="post-title">{{ $post->title }}</div>
+		        <div class="body-editable" id="post-content">{{ $post->content }}</div>
+		        <input type="hidden" id="post-id" value="{{ $post->id }}">
+		        {{ Form::submit('Update Post', array('class' => 'btn btn-primary', 'id' => 'form-update')) }}
+		    {{ Form::close() }}
         </div>
     </div>
 @stop

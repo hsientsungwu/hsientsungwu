@@ -10,7 +10,7 @@ class PostsController extends BaseController {
 
 	public function index() 
 	{
-		$posts = $this->post->all();
+		$posts = $this->post->orderBy('id', 'DESC')->get();
 
 		return View::make('admin.post.index', compact('posts'));
 	}
@@ -30,6 +30,7 @@ class PostsController extends BaseController {
             $this->post->create($input);
             return Response::json(array('success' => true, 'errors' => '', 'message' => 'Post created successfully.'));
         }
+        
         return Response::json(array('success' => false, 'errors' => $validation, 'message' => 'All fields are required.'));
     }
  
@@ -43,7 +44,7 @@ class PostsController extends BaseController {
     {
         $post = $this->post->findOrFail($id);
  
-        return View::make('posts.show', compact('post'));
+        return View::make('admin.post.show', compact('post'));
     }
  
     /**
@@ -58,10 +59,10 @@ class PostsController extends BaseController {
  
         if (is_null($post))
         {
-            return Redirect::route('admin.posts.index');
+            return Redirect::route('admin.post.index');
         }
  
-        return View::make('posts.edit', compact('post'));
+        return View::make('admin.post.edit', compact('post'));
     }
  
     /**
@@ -96,6 +97,6 @@ class PostsController extends BaseController {
     {
         $this->post->find($id)->delete();
  
-        return Redirect::route('admin.posts.index');
+        return Redirect::route('admin.post.index');
     }
 }

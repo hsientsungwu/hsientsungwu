@@ -5,6 +5,7 @@ var titleEditor = new MediumEditor('.title-editable', {
 var bodyEditor = new MediumEditor('.body-editable', {
     buttonLabels: 'fontawesome'
 });
+
 $(function () {
     $('.body-editable').mediumInsert({
         editor: bodyEditor,
@@ -17,6 +18,7 @@ $(function () {
         titleEditor.deactivate();
     }
 });
+
 // hiding messages
 $('.error').hide().empty();
 $('.success').hide().empty();
@@ -30,8 +32,8 @@ $('body').on('click', '#form-submit', function(e){
     $.ajax({
         type: 'POST',
         dataType: 'json',
-        url : "{{ URL::action('PostsController@store') }}",
-        data: { title: postTitle['post-title']['value'], body: postContent['post-body']['value'] },
+        url : "/admin/posts",
+        data: { title: postTitle['post-title']['value'], content: postContent['post-content']['value'] },
         success: function(data) {
             if(data.success === false)
             {
@@ -41,7 +43,7 @@ $('body').on('click', '#form-submit', function(e){
                 $('.success').append(data.message);
                 $('.success').show();
                 setTimeout(function() {
-                    window.location.href = "{{ URL::action('PostsController@index') }}";
+                    window.location.href = "/admin/posts";
                 }, 2000);
             }
         },
@@ -57,12 +59,13 @@ $('body').on('click', '#form-update', function(e){
     e.preventDefault();
     var postTitle = titleEditor.serialize();
     var postContent = bodyEditor.serialize();
+    var postId = $('#post-id').val();
 
     $.ajax({
         type: 'PUT',
         dataType: 'json',
-        url : "{{ URL::action('PostsController@update', array(Request::segment(2))) }}",
-        data: { title: postTitle['post-title']['value'], body: postContent['post-body']['value'] },
+        url : "/admin/posts/" + postId,
+        data: { title: postTitle['post-title']['value'], content: postContent['post-content']['value'] },
         success: function(data) {
             if(data.success === false)
             {
@@ -72,7 +75,7 @@ $('body').on('click', '#form-update', function(e){
                 $('.success').append(data.message);
                 $('.success').show();
                 setTimeout(function() {
-                    window.location.href = "{{ URL::action('PostsController@index') }}";
+                    window.location.href = "/admin/posts/";
                 }, 2000);
             }
         },
