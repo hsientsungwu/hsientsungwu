@@ -76,8 +76,7 @@
 
             <article>
                 <section>
-                    <p class="text-theme no-margin-top">Software Engineer at <a class="" href="http://qgiv.com/" target="_blank">Qgiv</a> in Lakeland, Florida.</p>
-                    <p class="text-theme">Visit my <a href="http://blog.hsientsungwu.com/">blog</a> for my recent activities.</p>
+                    <p class="text-theme no-margin-top">Engineer at <a class="" href="https://www.wayfair.com/" target="_blank">Wayfair LLC</a> in Boston, MA.</p>
                 </section>
             </article>
 
