@@ -1,95 +1,106 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+    <meta name="google-site-verification" content="XJ4a7DcPnEMudmkd1pjNq15SZjofqChnpVjj7Q0hLc0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hsien Tsung Wu | Software Engineer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+    <link rel="stylesheet" href="/home/css/normalize.min.css">
+    <link href="/home/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/home/css/main.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/home/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/home/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/home/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/home/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/home/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/home/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/home/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/home/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/home/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/home/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/home/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/home/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/home/icons/favicon-16x16.png">
+    <link rel="manifest" href="/home/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <link rel="shortcut icon" type="image/png" href="/home/iconsfavicon.ico"/>
 
-            .full-height {
-                height: 100vh;
-            }
+    <script async="" src="/home/js/analytics.js"></script
+    ><script src="/home/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <style type="text/css"></style>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Hotjar Tracking Code for http://www.hsientsungwu -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:192994,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<body class="home">
 
-            .content {
-                text-align: center;
-            }
+<div class="page-container home">
+    <div class="landing container header-container bg-primary-color secondary-color text-white text-center">
 
-            .title {
-                font-size: 84px;
-            }
+        <header class="wrapper text-color no-padding-bottom clearfix">
+            <img src="/home/icons/steve_cross_arm_333333.png" style="width:150px" />
+            <br><br>
+            <nav>
+                <ul>
+                    <li><a href="http://github.com/HsienTsungWu/" target="_blank"><i class="icon-github2"></i></a></li>
+                    <li><a href="http://twitter.com/#!/HsienTsungWu" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/hsientsungwu" target="_blank"><i class="icon-linkedin"></i></a></li>
+                </ul>
+            </nav>
+            <h1 class="identity text-theme">Hsien Tsung Wu</h1>
+        </header>
+        <div class="main wrapper clearfix no-padding-top">
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+            <article>
+                <section>
+                    <p class="text-theme no-margin-top">Software Engineer at <a class="" href="http://qgiv.com/" target="_blank">Qgiv</a> in Lakeland, Florida.</p>
+                    <p class="text-theme">Visit my <a href="http://blog.hsientsungwu.com/">blog</a> for my recent activities.</p>
+                </section>
+            </article>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+        </div> <!-- #main -->
+    </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+</div><!-- closes .page-container -->
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+<script src="/home/js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"><\/script>')</script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71267601-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+</body></html>
