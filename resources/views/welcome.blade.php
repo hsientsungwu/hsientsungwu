@@ -38,7 +38,7 @@
     <link rel="shortcut icon" type="image/png" href="/home/iconsfavicon.ico"/>
 
     <script async="" src="/home/js/analytics.js"></script>
-    <script src="/home/js/modernizr-custom.js"></script>
+    <!-- <script src="/home/js/modernizr-custom.js"></script> -->
     <style type="text/css"></style>
 
     <!-- Hotjar Tracking Code for http://www.hsientsungwu -->
