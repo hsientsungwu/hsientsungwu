@@ -34,14 +34,14 @@ class Kernel extends ConsoleKernel
 
             $alert->notify($response);
         })->everyMinute()->between("06:30", "07:10");
-
+*/
         $schedule->call(function () {
-            $response = Trip::hasTripArrivedAtStop('2514', 'Grafton');
+            $response = Trip::hasTripArrivedAtStop('2514', 'Framingham');
 
-            $alert = CommuterAlert::where('alertId', '=', 4)->first();
+            $alert = CommuterAlert::where('alertId', '=', 3)->first();
             $alert->notify($response);
         })->everyMinute();
-*/
+
         $schedule->call(function () {
             $data = "payload=" . json_encode(array(
                     "text"          =>  "testing - " . time()
