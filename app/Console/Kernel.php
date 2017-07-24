@@ -40,6 +40,20 @@ class Kernel extends ConsoleKernel
             $alert = CommuterAlert::where('alertId', '=', 4)->first();
             $alert->notify($response);
         })->everyMinute();
+
+        $schedule->call(function () {
+            $data = "payload=" . json_encode(array(
+                    "text"          =>  "testing - " . time()
+                ));
+
+            // You can get your webhook endpoint from your Slack settings
+            $ch = curl_init("https://hooks.slack.com/services/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");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch);
+            curl_close($ch);
+        })->everyFiveMinutes();
     }
 
     /**
