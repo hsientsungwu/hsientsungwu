@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->call(function () {
-            $alerts = CommuterAlert::where('alertType', '=', 1);
+            $alerts = CommuterAlert::where('alertType', '=', 1)->get();
 
             foreach ($alerts as $alert) {
                 $response = Trip::hasTripArrivedAtStop($alert->alertTripId, $alert->alertStopId);
@@ -37,7 +37,7 @@ class Kernel extends ConsoleKernel
         })->everyMinute()->between("06:30", "07:10");
 
         $schedule->call(function () {
-            $alerts = CommuterAlert::where('alertType', '=', 2);
+            $alerts = CommuterAlert::where('alertType', '=', 2)->get();
 
             foreach ($alerts as $alert) {
                 $response = Trip::hasTripArrivedAtStop($alert->alertTripId, $alert->alertStopId);
