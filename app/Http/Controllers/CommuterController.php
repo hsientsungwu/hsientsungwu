@@ -11,9 +11,7 @@ use Illuminate\Http\Request;
 
 class CommuterController extends Controller
 {
-    /**
-     * @param $trip
-     */
+
     public function getScheduleByTrip($trip) {
         $bridge = new MBTABridge();
 
@@ -26,6 +24,12 @@ class CommuterController extends Controller
         echo $bridge->getPredictionByTrip($trip);
     }
 
+    public function getScheduleByStop($stop) {
+        $bridge = new MBTABridge();
+
+        echo $bridge->getScheduleByStop($stop);
+    }
+
     public function getPredictionByStop($stop) {
         $bridge = new MBTABridge();
 
@@ -33,7 +37,7 @@ class CommuterController extends Controller
     }
 
     public function notifyTrip($trip_id, $stop = 'Auburndale') {
-        Trip::hasTripArrivedAtStop($trip_id, $stop);
+        echo Trip::hasTripArrivedAtStop($trip_id, $stop);
     }
 
     public function saveTrip($trip) {

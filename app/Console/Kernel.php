@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\CommuterAlert;
+use App\Trip;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,8 +26,20 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->call(function () {
+            $response = Trip::hasTripArrivedAtStop('584', 'Wellesley Square');
+
+            $alert = CommuterAlert::where('alertId', '=', 1)->first();
+
+            $alert->notify($response);
+        })->everyMinute()->between("06:30", "07:10");
+
+        $schedule->call(function () {
+            $response = Trip::hasTripArrivedAtStop('2514', 'Grafton');
+
+            $alert = CommuterAlert::where('alertId', '=', 4)->first();
+            $alert->notify($response);
+        })->everyMinute();
     }
 
     /**

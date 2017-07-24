@@ -12,7 +12,8 @@ class MBTABridge extends Model
     public $stops = [
         'auburndale' => 'Auburndale',
         'westborough' => 'Westborough',
-        'backbay' => 'Back Bay'
+        'backbay' => 'Back Bay',
+        'westnatick' => 'West Natick',
     ];
 
     public function getScheduleByTrip($trip_id) {
@@ -21,6 +22,14 @@ class MBTABridge extends Model
         if ($trip_name == '') return [];
 
         return $this->getData('schedulebytrip', ['trip' => $trip_name]);
+    }
+
+    public function getScheduleByStop($stop_id) {
+        $stop_name = $this->stops[$stop_id];
+
+        if ($stop_name == '') return [];
+
+        return $this->getData('schedulebystop', ['stop' => $stop_name]);
     }
 
     public function getPredictionByTrip($trip_id) {

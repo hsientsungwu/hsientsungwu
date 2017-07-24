@@ -8,6 +8,8 @@ class Route extends Model
 {
 
     protected $table = 'routes';
+    protected $primaryKey = 'routeId';
+    public $incrementing = false;
     public $timestamps = false;
 
     public function trips()
