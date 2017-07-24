@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        /*
         $schedule->call(function () {
             $response = Trip::hasTripArrivedAtStop('584', 'Wellesley Square');
 
@@ -40,7 +41,7 @@ class Kernel extends ConsoleKernel
             $alert = CommuterAlert::where('alertId', '=', 4)->first();
             $alert->notify($response);
         })->everyMinute();
-
+*/
         $schedule->call(function () {
             $data = "payload=" . json_encode(array(
                     "text"          =>  "testing - " . time()
