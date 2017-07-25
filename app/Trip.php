@@ -55,12 +55,12 @@ class Trip extends Model
 
         foreach ($predictionSchedule->stop as $predictionStop) {
             if ($predictionStop->stop_sequence == $stop->sequenceStopSequence) {
-                $response['message'] =  "Train (" . $trip_id . ") will arrive at " . $stop->sequenceStopName . " in " . intval(gmdate("i", $predictionStop->pre_away)) . " minute and "
+                $response['message'] =  "Train (" . $trip_id . ") will arrive at *" . $stop->sequenceStopName . "* in " . intval(gmdate("i", $predictionStop->pre_away)) . " minute and "
                     . gmdate("s", $predictionStop->pre_away) . " seconds (" . date('H:i A', $predictionStop->pre_dt) . ")";
                 $response['time'] = date('H:i A', $predictionStop->pre_dt);
                 break;
             } elseif ($predictionStop->stop_sequence > $stop->sequenceStopSequence) {
-                $response['message'] =  "Train (" . $trip_id . ") has left " . $stop->sequenceStopName;
+                $response['message'] =  "Train (" . $trip_id . ") has left *" . $stop->sequenceStopName . "*";
                 break;
             } else {
                 continue;
