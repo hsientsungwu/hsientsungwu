@@ -6,6 +6,7 @@ use App\CommuterAlert;
 use App\Trip;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Log;
 
 class Kernel extends ConsoleKernel
 {
@@ -28,6 +29,7 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->call(function () {
+            Log::info('Scheduled job ran for Alert Type 1');
             $alerts = CommuterAlert::where('alertType', '=', 1)->get();
 
             foreach ($alerts as $alert) {
@@ -37,6 +39,7 @@ class Kernel extends ConsoleKernel
         })->everyMinute()->between("06:30", "07:20");
 
         $schedule->call(function () {
+            Log::info('Scheduled job ran for Alert Type 1');
             $alerts = CommuterAlert::where('alertType', '=', 2)->get();
 
             foreach ($alerts as $alert) {

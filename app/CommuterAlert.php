@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class CommuterAlert extends Model
 {
@@ -22,6 +23,8 @@ class CommuterAlert extends Model
         $data = "payload=" . json_encode(array(
                 "text"          =>  $message
             ));
+
+        Log::info('Send Slack message.');
 
         // You can get your webhook endpoint from your Slack settings
         $ch = curl_init("https://hooks.slack.com/services/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");

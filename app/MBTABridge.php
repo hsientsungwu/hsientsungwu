@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class MBTABridge extends Model
 {
@@ -63,6 +64,8 @@ class MBTABridge extends Model
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
         $output = curl_exec($ch);
+
+        Log::info('Get data from MBTA API.');
 
         curl_close($ch);
 
