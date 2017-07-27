@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Monolog\Logger;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\SyslogUdpHandler;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +27,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if (env('APP_ENV') != 'local') {
+            $output = "%channel%.%level_name%: %message%";
+            $formatter = new LineFormatter($output);
 
+            $logger = new Logger('papertrail-com-hsientsungwu-dev');
+            $syslogHandler = new SyslogUdpHandler(env('PAPERTRAIL_HOST'), env('PAPERTRAIL_PORT'));
+            $syslogHandler->setFormatter($formatter);
+            $logger->pushHandler($syslogHandler);
+
+            $logger->addInfo('Monolog test');
+        }
     }
 }

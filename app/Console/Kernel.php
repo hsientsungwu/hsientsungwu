@@ -37,16 +37,6 @@ class Kernel extends ConsoleKernel
                 $alert->notify($response);
             }
         })->everyMinute()->between("06:30", "07:20");
-
-        $schedule->call(function () {
-            Log::info('Scheduled job ran for Alert Type 1');
-            $alerts = CommuterAlert::where('alertType', '=', 2)->get();
-
-            foreach ($alerts as $alert) {
-                $response = Trip::hasTripArrivedAtStop($alert->alertTripId, $alert->alertStopId);
-                $alert->notify($response);
-            }
-        })->everyMinute();
     }
 
     /**
