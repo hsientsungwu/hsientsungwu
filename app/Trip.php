@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Trip extends Model
 {
@@ -12,13 +13,13 @@ class Trip extends Model
     public $timestamps = false;
 
     public static $identifiers = [
-        '584' => 'CR-Weekday-Spring-17-584',
-        '537' => 'CR-Weekday-Spring-17-537',
-        '2502' => 'CR-Sunday-Spring-17-2502',
-        '2505' => 'CR-Sunday-Spring-17-2505',
-        '2512' => 'CR-Sunday-Spring-17-2512',
-        '2513' => 'CR-Sunday-Spring-17-2513',
-        '2514' => 'CR-Sunday-Spring-17-2514',
+        '584' => 'CR-Weekday-Fall-17-584',
+        '537' => 'CR-Weekday-Fall-17-537',
+        '2502' => 'CR-Sunday-Fall-17-2502',
+        '2505' => 'CR-Sunday-Fall-17-2505',
+        '2512' => 'CR-Sunday-Fall-17-2512',
+        '2513' => 'CR-Sunday-Fall-17-2513',
+        '2514' => 'CR-Sunday-Fall-17-2514',
     ];
 
     public function route() {
@@ -35,7 +36,9 @@ class Trip extends Model
         $trip = self::where('tripId', '=', $trip_name)->first();
 
         if (!$trip) {
-            echo 'Invalid Trip';
+            $error_message = 'Invalid trip - ' . $trip_name;
+            Log::warning($error_message);
+            echo $error_message;
             return;
         }
 
@@ -47,11 +50,20 @@ class Trip extends Model
         $stop = $trip->sequences->where('sequenceStopId', '=', $stop_name)->first();
 
         if (!$stop) {
-            echo 'Invalid Stop';
+            $error_message = 'Invalid stop - ' . $stop_name . ' for ' . $trip_name;
+            Log::warning($error_message);
+            echo $error_message;
             return;
         }
 
         $response = ['time' => '', 'message' => ''];
+
+        if ($predictionSchedule->error) {
+            $error_message = $predictionSchedule->error->message;
+            Log::warning($error_message);
+            echo $error_message;
+            return;
+        }
 
         foreach ($predictionSchedule->stop as $predictionStop) {
             if ($predictionStop->stop_sequence == $stop->sequenceStopSequence) {
