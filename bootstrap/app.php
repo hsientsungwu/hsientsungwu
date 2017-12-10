@@ -41,6 +41,15 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->configureMonologUsing(function ($monolog) {
+    $handler = new Monolog\Handler\LogglyHandler(config('services.loggly.key'),
+        Monolog\Logger::DEBUG
+    );
+    $handler->setTag(config('services.loggly.tag'));
+    $monolog->pushHandler($handler);
+    $monolog->addWarning('Testing logs to loggly');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
