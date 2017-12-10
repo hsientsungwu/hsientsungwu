@@ -36,7 +36,7 @@ return [
     ],
     'loggly' => [
         'key'    => env('LOGGLY_KEY'),
-        'tag'    => 'ProjectName_' . env('APP_ENV')
+        'tag'    => 'hsientsungwucom_' . env('APP_ENV')
     ],
 
 ];

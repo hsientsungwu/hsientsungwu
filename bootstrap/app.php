@@ -47,7 +47,6 @@ $app->configureMonologUsing(function ($monolog) {
     );
     $handler->setTag(config('services.loggly.tag'));
     $monolog->pushHandler($handler);
-    $monolog->addWarning('Testing logs to loggly');
 });
 
 /*
